@@ -1,1 +1,10 @@
-<p>dashboard works!</p>
+<body>
+    <div class="main-wrap" [@cardAnimation]="cards.length">
+        <div class="card" *ngFor="let card of cards; index as i">
+            <h3 class="info">{{card.name}}</h3>
+            <br><br><br><br><br><br>
+            <p class="bal">{{card.balance}}</p>
+        </div>
+
+    </div>
+</body>

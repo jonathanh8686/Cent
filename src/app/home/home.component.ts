@@ -42,8 +42,9 @@ export class HomeComponent implements OnInit {
 
   submit() {
       console.log(this.lenderControl.value["firstName"] + " paid " + this.borrowerControl.value["firstName"] + " " + this.amountControl.value + "$ for " + this.reasonControl.value);
-
-      
+    
+      console.log(this.lenderControl.value);
+      this.api.AddTransaction(this.lenderControl.value["userId"], this.borrowerControl.value["userId"], this.amountControl.value, this.reasonControl.value); 
       this.lenderControl.reset();
       this.borrowerControl.reset();
       this.amountControl.reset();

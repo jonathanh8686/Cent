@@ -1,0 +1,25 @@
+
+.main-wrap {
+     width: 100%;
+     max-height: 90vh;
+	 display: flex;
+	 padding: 20px;
+     flex-wrap: wrap;
+     overflow: auto; 
+     box-sizing: border-box;
+	 justify-content: center;
+}
+ .main-wrap .card {
+	 width: 250px;
+	 height: 200px;
+	 background: white;
+	 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	 border-radius: 10px;
+	 margin: 10px 20px;
+	 position: relative;
+     display: flex;
+     align-content: center;
+    justify-content: center;
+	 background: #0ea7c2;
+}
+
