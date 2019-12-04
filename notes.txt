@@ -1,0 +1,9 @@
+
+USE
+
+ng build --base-href "/cent/"  --prod --output-hashing=all
+
+To build to distribution
+
+Add web.config to project
+Add "web.config" to assets in angular.json

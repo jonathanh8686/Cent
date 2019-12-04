@@ -15,6 +15,10 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
   a:active {
     color: lightgray;
   }
+
+  .mat-sidenav-left .mat-theme-indigo, .mat-sidenav-left .nav-theme {
+    background-color: #34495e;
+}
   
   .navigation-items {
     list-style: none;

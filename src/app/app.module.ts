@@ -13,12 +13,14 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        DashboardComponent
+        DashboardComponent,
+        HistoryComponent
     ],
     imports: [
         BrowserModule,

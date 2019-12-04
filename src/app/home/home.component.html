@@ -30,7 +30,7 @@
                 </mat-step>
                 <mat-step label="Amount">
                     <mat-form-field class="money-input">
-                        <input matInput placeholder="$" [formControl]="amountControl">
+                        <input type="number" min="0" max="1000" matInput placeholder="$" [formControl]="amountControl">
                         <mat-error *ngIf="!amountControl.hasError('required')">
                             Please enter a valid amount
                         </mat-error>
@@ -50,17 +50,21 @@
                     </mat-form-field>
 
                     <div>
-                        <button mat-button (click)="submit(); stepper.reset()">Submit</button>
+                        <button mat-button (click)="submit(stepper);">Cent it</button>
                     </div>
                 </mat-step>
             </mat-vertical-stepper>
         </div>
     </div>
 
-    <div class="historyDiv" style="background-color: red" fxFlex>
-        sadkfjahskfjahwekfjahwekjfahwekf
+    <div class="historyDiv" fxFlex>
+        <div class="main-wrap" [@cardAnimation]="cards.length">
+            <div class="card" *ngFor="let card of cards; index as i">
+                <div class="info" style="font-family: 'PT Sans', sans-serif; font-size:130%;">{{card.lender}} gave {{card.borrower}} {{card.amount|currency}} for {{card.reason}}</div>
+            </div>
+    
+        </div>
     </div>
 
 </div>
 
-<mat-divider [vertical]="true"></mat-divider>

@@ -1,7 +1,7 @@
 
 .main-wrap {
      width: 100%;
-     max-height: 90vh;
+     max-height: 88vh;
 	 display: flex;
 	 padding: 20px;
      flex-wrap: wrap;
@@ -11,15 +11,22 @@
 }
  .main-wrap .card {
 	 width: 250px;
-	 height: 200px;
-	 background: white;
+	 height: 140px;
 	 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	 border-radius: 10px;
 	 margin: 10px 20px;
-	 position: relative;
-     display: flex;
-     align-content: center;
-    justify-content: center;
-	 background: #0ea7c2;
+	 background: #062F4F;
+}
+
+.info {
+    font-family: "font-family: 'PT Sans', sans-serif;";
+    text-align: center;
+}
+
+.bal {
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    left: 50%;
 }
 

@@ -1,9 +1,21 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+</style>
+
 <body>
     <div class="main-wrap" [@cardAnimation]="cards.length">
         <div class="card" *ngFor="let card of cards; index as i">
-            <h3 class="info">{{card.name}}</h3>
-            <br><br><br><br><br><br>
-            <p class="bal">{{card.balance}}</p>
+            <div class="info" style="font-family: 'PT Sans', sans-serif; font-size:200%;">{{card.name}}</div>
+            <br>
+
+            <div *ngIf="card.balance >= 0; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock><div class="bal" style="font-family: 'PT Sans', sans-serif; font-size:300%; color: rgb(0, 255, 0);">
+                {{card.balance|currency}}</div></ng-template>
+            <ng-template #elseBlock><div class="bal" style="font-family: 'PT Sans', sans-serif; font-size:300%; color: red;">
+                {{card.balance|currency}}</div></ng-template>
+
+
+
         </div>
 
     </div>

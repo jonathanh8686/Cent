@@ -26,6 +26,7 @@ import {
   MatSnackBarModule,
   MatAutocompleteModule,
   MatStepperModule,
+  MatPaginatorModule
   
 } from '@angular/material';
 
@@ -53,7 +54,8 @@ const modules = [
   MatCheckboxModule,
   MatSelectModule,
   MatSnackBarModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatPaginatorModule
 ]
 
 @NgModule({

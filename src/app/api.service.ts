@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -8,7 +9,7 @@ export class ApiService {
 
     constructor(private http: HttpClient) { }
     GetUsers() {
-        return this.http.get("https://localhost:44357/api/Users");
+        return this.http.get(environment.ApiUrl + "/api/Users");
     }
 
     GetUserID(firstName: string, lastName: string) {
@@ -16,15 +17,18 @@ export class ApiService {
     }
 
     GetUserFromID(id: number){
-        return this.http.get("https://localhost:44357/api/Users" + id.toString());
+        return this.http.get(environment.ApiUrl + "/api/Users/" + id.toString());
     }
 
     GetTransactions() {
-        return this.http.get("https://localhost:44357/api/Transactions");
+        return this.http.get(environment.ApiUrl + "/api/Transactions");
     }
 
 
     AddTransaction(lender: string, borrower: string, amount: number, reason: string) {
+
+        amount = Math.round(amount * 100) / 100;
+
         var newTrans = {
             "User1": lender,
             "User2": borrower,
@@ -38,7 +42,7 @@ export class ApiService {
 
         var bodyString = JSON.stringify(newTrans);
         console.log(bodyString);
-        this.http.post('https://localhost:44357/api/Transactions', bodyString, { headers: hdr }).subscribe();
+        return this.http.post(environment.ApiUrl + '/api/Transactions', bodyString, { headers: hdr });
     }
 
 }
